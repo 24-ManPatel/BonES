@@ -1,0 +1,13 @@
+.carousel-image {
+    width: 1000px;
+    height: 1000px;
+    object-fit: cover; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 70, 85, 0.5);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .carousel-image:hover {
+    transform: scale(1.05);
+  }
+  
