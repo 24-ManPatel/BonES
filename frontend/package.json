@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.121.4",
+    "@react-three/fiber": "^8.17.14",
     "framer-motion": "^12.0.11",
     "frontend": "file:",
     "gsap": "^3.12.7",
+    "lucide-react": "^0.474.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "three": "^0.173.0"

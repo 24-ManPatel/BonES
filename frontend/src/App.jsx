@@ -1,8 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Home from './components/home'
+import Home from './components/Home'
 import './App.css'
+import HomeContent from './components/HomeContent'
+import SpikeBlastFooter from './components/SpikeBlastFooter'
 
 function App() {
 
@@ -10,6 +9,8 @@ function App() {
     <>
       <div>
         <Home></Home>
+        <HomeContent></HomeContent>
+        <SpikeBlastFooter></SpikeBlastFooter>
       </div>
     </>
   )

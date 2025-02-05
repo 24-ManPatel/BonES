@@ -13,50 +13,37 @@ const ValorantCursorEffects = () => {
     sceneRef.current = new THREE.Scene();
     const aspectRatio = window.innerWidth / window.innerHeight;
     cameraRef.current = new THREE.OrthographicCamera(
-      -aspectRatio, aspectRatio,
-      1, -1,
-      0.1, 1000
+      -aspectRatio, aspectRatio, 1, -1, 0.1, 1000
     );
     cameraRef.current.position.z = 5;
 
-    rendererRef.current = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: true
-    });
+    rendererRef.current = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     rendererRef.current.setSize(window.innerWidth, window.innerHeight);
-    rendererRef.current.setClearColor(0x000000, 0);
+    rendererRef.current.setClearColor(0xffffff, 0);
     
     const canvas = rendererRef.current.domElement;
-    canvas.style.position = 'fixed';
-    canvas.style.top = '0';
-    canvas.style.left = '0';
-    canvas.style.zIndex = '9999';
-    canvas.style.pointerEvents = 'none';
+    canvas.style.position = "fixed";
+    canvas.style.top = "0";
+    canvas.style.left = "0";
+    canvas.style.zIndex = "9999";
+    canvas.style.pointerEvents = "none";
     document.body.appendChild(canvas);
 
     const createCrosshair = () => {
       const group = new THREE.Group();
-      const lineLength = 0.02;
-      const lineWidth = 0.002;
-      const dotSize = 0;
+      const lineLength = 0.03; // Slightly larger for visibility
+      const lineWidth = 0.0025;
       
-      // Center dot 
-      const dotGeometry = new THREE.CircleGeometry(dotSize, 16);
-      const dotMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-      const dot = new THREE.Mesh(dotGeometry, dotMaterial);
-      group.add(dot);
-      
-      // Crosshair lines 
       const lines = [
-        { pos: new THREE.Vector2(0, lineLength * 1.2), rot: 0 },
-        { pos: new THREE.Vector2(0, -lineLength * 1.2), rot: 0 },
-        { pos: new THREE.Vector2(lineLength * 1.2, 0), rot: Math.PI / 2 },
-        { pos: new THREE.Vector2(-lineLength * 1.2, 0), rot: Math.PI / 2 }
+        { pos: new THREE.Vector2(0, lineLength), rot: 0 },
+        { pos: new THREE.Vector2(0, -lineLength), rot: 0 },
+        { pos: new THREE.Vector2(lineLength, 0), rot: Math.PI / 2 },
+        { pos: new THREE.Vector2(-lineLength, 0), rot: Math.PI / 2 }
       ];
 
       lines.forEach(line => {
         const geometry = new THREE.PlaneGeometry(lineWidth, lineLength);
-        const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+        const material = new THREE.MeshBasicMaterial({ color: 0xffffff, emissive: 0xffffff });
         
         const mesh = new THREE.Mesh(geometry, material);
         mesh.position.set(line.pos.x, line.pos.y, 0);
@@ -67,12 +54,11 @@ const ValorantCursorEffects = () => {
       sceneRef.current.add(group);
       crosshairRef.current = group;
       
-      // Hide default cursor
-      document.body.style.cursor = 'none';
+      document.body.style.cursor = "none";
     };
 
     const createTrailPoint = (x, y) => {
-      const geometry = new THREE.CircleGeometry(0.008, 12); // Larger size
+      const geometry = new THREE.CircleGeometry(0.008, 12);
       const material = new THREE.MeshBasicMaterial({
         color: new THREE.Color(0xffffff),
         transparent: true,
@@ -85,12 +71,7 @@ const ValorantCursorEffects = () => {
       
       trailPointsRef.current.push({ mesh: point, createdAt: Date.now() });
 
-      gsap.to(material, {
-        opacity: 0.8,
-        duration: 0.6,
-        ease: "power2.out"
-      });
-
+      gsap.to(material, { opacity: 0.8, duration: 0.6, ease: "power2.out" });
       gsap.to(point.scale, {
         x: 0,
         y: 0,
@@ -125,12 +106,7 @@ const ValorantCursorEffects = () => {
       point.position.set(x, y, -0.1);
       sceneRef.current.add(point);
 
-      gsap.to(material, {
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.out"
-      });
-
+      gsap.to(material, { opacity: 0, duration: 0.6, ease: "power2.out" });
       gsap.to(point.scale, {
         x: 0,
         y: 0,
@@ -154,11 +130,7 @@ const ValorantCursorEffects = () => {
 
     const handleMouseMove = (event) => {
       const { x, y } = getScenePosition(event.clientX, event.clientY);
-      
-      if (crosshairRef.current) {
-        crosshairRef.current.position.set(x, y, 0);
-      }
-      
+      if (crosshairRef.current) crosshairRef.current.position.set(x, y, 0);
       createTrailPoint(x, y);
     };
 
@@ -183,9 +155,9 @@ const ValorantCursorEffects = () => {
       rendererRef.current.setSize(window.innerWidth, window.innerHeight);
     };
 
-    window.addEventListener('resize', handleResize);
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('click', handleClick);
+    window.addEventListener("resize", handleResize);
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("click", handleClick);
 
     const animate = () => {
       if (!rendererRef.current) return;
@@ -195,10 +167,10 @@ const ValorantCursorEffects = () => {
     animate();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('click', handleClick);
-      document.body.style.cursor = 'auto';
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("click", handleClick);
+      document.body.style.cursor = "auto";
       
       if (rendererRef.current) {
         document.body.removeChild(rendererRef.current.domElement);
