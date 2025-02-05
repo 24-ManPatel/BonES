@@ -29,7 +29,6 @@ const SpikeBlastFooter = () => {
     const { width, height } = footer.getBoundingClientRect();
     rendererRef.current.setSize(width, height);
 
-
     const particlesGeometry = new THREE.BufferGeometry();
     const particlesCount = 10000;
     const posArray = new Float32Array(particlesCount * 3);
@@ -97,7 +96,7 @@ const SpikeBlastFooter = () => {
   }, []);
 
   return (
-    <footer className="w-full bg-black text-white relative h-[300px]">
+    <footer className="w-full relative h-[300px] bg-gradient-to-b from-[#0F1923] to-black text-white">
       <canvas ref={canvasRef} className="w-full h-full absolute top-0 left-0 z-0" style={{ width: "100%", height: "100%" }} />
       <div className="relative z-10 container mx-auto px-4 flex items-center h-full">
         <div className="w-full flex justify-between items-center">
