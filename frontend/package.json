@@ -12,8 +12,10 @@
   "dependencies": {
     "framer-motion": "^12.0.11",
     "frontend": "file:",
+    "gsap": "^3.12.7",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "three": "^0.173.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

@@ -1,13 +1,33 @@
-.carousel-image {
-    width: 1000px;
-    height: 1000px;
-    object-fit: cover; 
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(255, 70, 85, 0.5);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .carousel-image:hover {
-    transform: scale(1.05);
-  }
-  
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  object-fit: cover; /* Ensures image covers the full area */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.content-container {
+  position: relative; /* Ensures content stays above background */
+  z-index: 1; /* Places content above the background */
+  text-align: center;
+}
+
+.button-custom {
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-custom:hover {
+  background: #FF4655;
+  border-color: #FF4655;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(255, 70, 85, 0.5);
+}
+
