@@ -2,15 +2,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw; /* Full width */
-  height: 100vh; /* Full height */
-  object-fit: cover; /* Ensures image covers the full area */
+  width: 100vw;
+  height: 100vh; 
+  object-fit: cover; 
   transition: opacity 0.5s ease-in-out;
 }
 
 .content-container {
-  position: relative; /* Ensures content stays above background */
-  z-index: 1; /* Places content above the background */
+  position: relative; 
+  z-index: 1; 
   text-align: center;
 }
 

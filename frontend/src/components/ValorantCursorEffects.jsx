@@ -40,13 +40,13 @@ const ValorantCursorEffects = () => {
       const lineWidth = 0.002;
       const dotSize = 0;
       
-      // Center dot (fully visible)
+      // Center dot 
       const dotGeometry = new THREE.CircleGeometry(dotSize, 16);
       const dotMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
       const dot = new THREE.Mesh(dotGeometry, dotMaterial);
       group.add(dot);
       
-      // Crosshair lines (fully visible)
+      // Crosshair lines 
       const lines = [
         { pos: new THREE.Vector2(0, lineLength * 1.2), rot: 0 },
         { pos: new THREE.Vector2(0, -lineLength * 1.2), rot: 0 },
@@ -87,14 +87,14 @@ const ValorantCursorEffects = () => {
 
       gsap.to(material, {
         opacity: 0.8,
-        duration: 0.6, // Longer fade-in
+        duration: 0.6,
         ease: "power2.out"
       });
 
       gsap.to(point.scale, {
         x: 0,
         y: 0,
-        duration: 0.8, // Longer duration before disappearing
+        duration: 0.8,
         ease: "power2.out",
         onComplete: () => {
           sceneRef.current.remove(point);
@@ -104,7 +104,6 @@ const ValorantCursorEffects = () => {
         }
       });
 
-      // **Create more trail points**
       for (let i = 0; i < 3; i++) {
         setTimeout(() => {
           const offsetX = (Math.random() - 0.5) * 0.02;
