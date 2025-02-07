@@ -30,7 +30,7 @@ const SpikeBlastFooter = () => {
     rendererRef.current.setSize(width, height);
 
     const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 10000;
+    const particlesCount = 5000;
     const posArray = new Float32Array(particlesCount * 3);
     const sizeArray = new Float32Array(particlesCount);
     const velocityArray = new Float32Array(particlesCount * 3);
@@ -111,7 +111,7 @@ const SpikeBlastFooter = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Connect</h3>
             <div className="flex space-x-4 mb-2">
-              <a href="#" className="hover:text-[#FF4655]"><Github size={24} /></a>
+              <a href="https://github.com/24-ManPatel" className="hover:text-[#FF4655]"><Github size={24} /></a>
               <a href="#" className="hover:text-[#FF4655]"><Instagram size={24} /></a>
               <a href="#" className="hover:text-[#FF4655]"><Linkedin size={24} /></a>
               <a href="#" className="hover:text-[#FF4655]"><Twitter size={24} /></a>
