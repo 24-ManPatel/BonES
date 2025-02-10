@@ -31,3 +31,31 @@
   box-shadow: 0px 4px 10px rgba(255, 70, 85, 0.5);
 }
 
+@font-face {
+  font-family: 'Valorant';
+  src: url('/path/to/Valorant-Font.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Tungsten';
+  src: url('/path/to/Tungsten-Bold.otf') format('opentype');
+}
+
+.font-valorant {
+  font-family: 'Valorant', sans-serif;
+}
+
+.font-tungsten {
+  font-family: 'Tungsten', sans-serif;
+}
+
+.font-cyber {
+  -webkit-text-stroke: 0.5px #FF4655;
+  
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap');
+
+.font-noto {
+  font-family: 'Noto Sans Devanagari', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans SC', sans-serif;
+}
