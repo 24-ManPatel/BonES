@@ -7,7 +7,8 @@ import (
 	"net/http"
 	"time"
 
-	// "github.com/24-ManPatel/BONES/backend/scraper"
+	"github.com/24-ManPatel/BONES/backend/scraper"
+
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

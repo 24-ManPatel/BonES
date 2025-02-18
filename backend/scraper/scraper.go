@@ -16,10 +16,10 @@ type MatchData struct {
 	MatchTime string
 }
 
-// FetchUpcomingMatches scrapes upcoming Valorant Masters Bangkok matches
+// FetchUpcomingMatches scrapes upcoming Valorant Masters Bangkok matches from VLR.gg
 func FetchUpcomingMatches() {
 	c := colly.NewCollector(
-		colly.AllowedDomains("liquipedia.net"),
+		colly.AllowedDomains("vlr.gg"),
 	)
 
 	// Set User-Agent to avoid being blocked
@@ -29,22 +29,39 @@ func FetchUpcomingMatches() {
 	})
 
 	// Scrape match details
-	c.OnHTML(".infobox_matches_content", func(e *colly.HTMLElement) {
-		event := e.ChildText(".league-icon")           // Tournament Name
-		teams := e.ChildTexts(".team-template-text a") // Teams
-		matchTime := e.ChildText(".timer-object")      // Match Time
+	c.OnHTML(".match-item", func(e *colly.HTMLElement) {
+		// Extract event name
+		event := e.ChildText(".match-item-event")
+		
+		// Extract team names
+		team1 := e.ChildText(".match-item-vs-team-1 .match-item-vs-team-name")
+		team2 := e.ChildText(".match-item-vs-team-2 .match-item-vs-team-name")
+		
+		// Extract match time
+		matchTime := e.ChildText(".match-item-time")
+
+		// Clean up the data
+		event = strings.TrimSpace(event)
+		team1 = strings.TrimSpace(team1)
+		team2 = strings.TrimSpace(team2)
+		matchTime = strings.TrimSpace(matchTime)
 
 		// Ensure valid data is scraped
-		if len(teams) >= 2 && matchTime != "" {
+		if team1 != "" && team2 != "" && matchTime != "" {
 			match := MatchData{
-				Event:     strings.TrimSpace(event),
-				Team1:     strings.TrimSpace(teams[0]),
-				Team2:     strings.TrimSpace(teams[1]),
-				MatchTime: strings.TrimSpace(matchTime),
+				Event:     event,
+				Team1:     team1,
+				Team2:     team2,
+				MatchTime: matchTime,
 			}
 
 			// Print match details
-			fmt.Printf("📅 Match: %s vs %s\n🕒 Time: %s\n🏆 Event: %s\n\n", match.Team1, match.Team2, match.MatchTime, match.Event)
+			fmt.Printf("Match: %s vs %s\nTime: %s\nEvent: %s\n\n", 
+				match.Team1, 
+				match.Team2, 
+				match.MatchTime, 
+				match.Event,
+			)
 		}
 	})
 
@@ -53,8 +70,8 @@ func FetchUpcomingMatches() {
 		log.Println("Request failed:", r.Request.URL, "Status:", r.StatusCode, "Error:", err)
 	})
 
-	// Visit Liquipedia Valorant Masters Bangkok page
-	err := c.Visit("https://liquipedia.net/valorant/VALORANT_Champions_Tour/2024/Masters/Bangkok")
+	// Visit VLR.gg Masters Bangkok page
+	err := c.Visit("https://www.vlr.gg/event/1947/vct-2024-masters-madrid")
 	if err != nil {
 		log.Fatal("Error visiting page:", err)
 	}
