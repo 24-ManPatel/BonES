@@ -31,7 +31,7 @@ func FetchUpcomingMatches() {
 	// Scrape match details
 	c.OnHTML(".match-item", func(e *colly.HTMLElement) {
 		// Extract event name
-		event := e.ChildText(".match-item-event")
+		event := e.ChildText(".match-item-event-series text-of")
 		
 		// Extract team names
 		team1 := e.ChildText(".match-item-vs-team-1 .match-item-vs-team-name")
