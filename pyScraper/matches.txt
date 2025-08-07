@@ -1,308 +1,240 @@
+1:30 PM - BOOM Esports										
 
 
---- Scrape at 2025-08-04 22:42:46 ---
+																					0 vs TALON										
 
 
+																					2 | Event: Week 1							
+							Group Stage | URL: https://www.vlr.gg/508815/boom-esports-vs-talon-vct-2025-pacific-stage-2-w1
+3:45 PM - Nongshim RedForce										
 
---- Scrape at 2025-08-04 22:43:47 ---
 
-BBL PCIFIC vs Papara SuperMassive
-Event: Playoffs–Upper Semifinals							
-							Challengers 2025: Türkiye Birlik Split 3
-Time: 8:00 PM
-Match Page: https://vlr.gg/511224/bbl-pcific-vs-papara-supermassive-challengers-2025-t-rkiye-birlik-split-3-ubsf
-----------------------------------------
-RIZON vs ALTERNATE aTTaX
-Event: Playoffs–Lower Round 2							
-							Challengers 2025: DACH Evolution Split 3
-Time: 8:30 PM
-Match Page: https://vlr.gg/522084/rizon-vs-alternate-attax-challengers-2025-dach-evolution-split-3-lr2
-----------------------------------------
-ULF Esports vs Galatasaray Esports
-Event: Playoffs–Upper Semifinals							
-							Challengers 2025: Türkiye Birlik Split 3
-Time: 11:00 PM
-Match Page: https://vlr.gg/511225/ulf-esports-vs-galatasaray-esports-challengers-2025-t-rkiye-birlik-split-3-ubsf
-----------------------------------------
-FOKUS vs CGN Esports
-Event: Playoffs–Lower Round 2							
-							Challengers 2025: DACH Evolution Split 3
-Time: 11:30 PM
-Match Page: https://vlr.gg/522085/fokus-vs-cgn-esports-challengers-2025-dach-evolution-split-3-lr2
-----------------------------------------
-Wadadaa vs YFP X
-Event: Swiss Stage–Round 2 (1-0)							
-							Game Changers 2025: North America Stage 2
-Time: 2:30 AM
-Match Page: https://vlr.gg/523250/wadadaa-vs-yfp-x-game-changers-2025-north-america-stage-2-r2-1-0
-----------------------------------------
-Shopify Rebellion Gold vs Mak N Cheese
-Event: Swiss Stage–Round 2 (1-0)							
-							Game Changers 2025: North America Stage 2
-Time: 2:30 AM
-Match Page: https://vlr.gg/523251/shopify-rebellion-gold-vs-mak-n-cheese-game-changers-2025-north-america-stage-2-r2-1-0
-----------------------------------------
-Equinox vs Alliance Angels
-Event: Swiss Stage–Round 2 (0-1)							
-							Game Changers 2025: North America Stage 2
-Time: 2:30 AM
-Match Page: https://vlr.gg/523252/equinox-vs-alliance-angels-game-changers-2025-north-america-stage-2-r2-0-1
-----------------------------------------
-:3 vs YDZ Black
-Event: Swiss Stage–Round 2 (0-1)							
-							Game Changers 2025: North America Stage 2
-Time: 2:30 AM
-Match Page: https://vlr.gg/523253/3-vs-ydz-black-game-changers-2025-north-america-stage-2-r2-0-1
-----------------------------------------
-E-Xolos LAZER vs AB3 Esports
-Event: Playoffs–Upper Semifinals							
-							Challengers 2025: LATAM North ACE Stage 2
-Time: 3:30 AM
-Match Page: https://vlr.gg/525798/e-xolos-lazer-vs-ab3-esports-challengers-2025-latam-north-ace-stage-2-ubsf
-----------------------------------------
-Frog Womp vs Hakikimori GC
-Event: Swiss Stage–Round 2 (1-0)							
-							Game Changers 2025: North America Stage 2
-Time: 5:00 AM
-Match Page: https://vlr.gg/523248/frog-womp-vs-hakikimori-gc-game-changers-2025-north-america-stage-2-r2-1-0
-----------------------------------------
-Ghost Gaming vs Tenax GC
-Event: Swiss Stage–Round 2 (1-0)							
-							Game Changers 2025: North America Stage 2
-Time: 5:00 AM
-Match Page: https://vlr.gg/523249/ghost-gaming-vs-tenax-gc-game-changers-2025-north-america-stage-2-r2-1-0
-----------------------------------------
-Teevee vs Artificial Intelligence
-Event: Swiss Stage–Round 2 (0-1)							
-							Game Changers 2025: North America Stage 2
-Time: 5:00 AM
-Match Page: https://vlr.gg/523254/teevee-vs-artificial-intelligence-game-changers-2025-north-america-stage-2-r2-0-1
-----------------------------------------
-FlyQuest RED vs ^-^
-Event: Swiss Stage–Round 2 (0-1)							
-							Game Changers 2025: North America Stage 2
-Time: 5:00 AM
-Match Page: https://vlr.gg/523255/flyquest-red-vs-game-changers-2025-north-america-stage-2-r2-0-1
-----------------------------------------
-Six Karma vs Contra
-Event: Playoffs–Upper Semifinals							
-							Challengers 2025: LATAM North ACE Stage 2
-Time: 6:30 AM
-Match Page: https://vlr.gg/525799/six-karma-vs-contra-challengers-2025-latam-north-ace-stage-2-ubsf
-----------------------------------------
-SLT Seongnam vs FN Pocheon
-Event: Round Robin–Week 4							
-							Challengers 2025: Korea WDG Stage 3
-Time: 1:30 PM
-Match Page: https://vlr.gg/511273/slt-seongnam-vs-fn-pocheon-challengers-2025-korea-wdg-stage-3-w4
-----------------------------------------
-Gen.G Global Academy vs DRX Academy
-Event: Round Robin–Week 4							
-							Challengers 2025: Korea WDG Stage 3
-Time: 3:30 PM
-Match Page: https://vlr.gg/511274/gen-g-global-academy-vs-drx-academy-challengers-2025-korea-wdg-stage-3-w4
-----------------------------------------
-Xipto Esports vs Sharper Esport
-Event: Group Stage–Week 3							
-							Challengers 2025: Southeast Asia Split 3
-Time: 4:30 PM
-Match Page: https://vlr.gg/521223/xipto-esports-vs-sharper-esport-challengers-2025-southeast-asia-split-3-w3
-----------------------------------------
-Oasis Gaming vs FULL SENSE
-Event: Group Stage–Week 3							
-							Challengers 2025: Southeast Asia Split 3
-Time: 7:30 PM
-Match Page: https://vlr.gg/521224/oasis-gaming-vs-full-sense-challengers-2025-southeast-asia-split-3-w3
-----------------------------------------
-LEVIATÁN Academy vs 9z Team
-Event: Playoffs–Upper Semifinals							
-							Challengers 2025: LATAM South ACE Stage 2
-Time: 12:30 AM
-Match Page: https://vlr.gg/525808/leviat-n-academy-vs-9z-team-challengers-2025-latam-south-ace-stage-2-playoffs-ubsf
-----------------------------------------
-Team Solid vs Los Grandes
-Event: Playoffs–Upper Round 1							
-							Challengers 2025: Brazil Gamers Club Split 2
-Time: 1:30 AM
-Match Page: https://vlr.gg/518745/team-solid-vs-los-grandes-challengers-2025-brazil-gamers-club-split-2-ur1
-----------------------------------------
-TSM vs YFP
-Event: Swiss Stage–Round 5							
-							Challengers 2025: North America ACE Stage 3
-Time: 1:30 AM
-Match Page: https://vlr.gg/525296/tsm-vs-yfp-challengers-2025-north-america-ace-stage-3-r5
-----------------------------------------
-Shopify Rebellion Black vs Burger Boyz
-Event: Swiss Stage–Round 5							
-							Challengers 2025: North America ACE Stage 3
-Time: 1:30 AM
-Match Page: https://vlr.gg/525297/shopify-rebellion-black-vs-burger-boyz-challengers-2025-north-america-ace-stage-3-r5
-----------------------------------------
-OXEN vs ShindeN
-Event: Playoffs–Upper Semifinals							
-							Challengers 2025: LATAM South ACE Stage 2
-Time: 3:30 AM
-Match Page: https://vlr.gg/525809/oxen-vs-shinden-challengers-2025-latam-south-ace-stage-2-playoffs-ubsf
-----------------------------------------
-RED Canids vs Corinthians Esports
-Event: Playoffs–Upper Round 1							
-							Challengers 2025: Brazil Gamers Club Split 2
-Time: 4:30 AM
-Match Page: https://vlr.gg/518746/red-canids-vs-corinthians-esports-challengers-2025-brazil-gamers-club-split-2-ur1
-----------------------------------------
-Legacy Kingdom vs Nightblood Gaming
-Event: Swiss Stage–Round 5							
-							Challengers 2025: North America ACE Stage 3
-Time: 4:30 AM
-Match Page: https://vlr.gg/525298/legacy-kingdom-vs-nightblood-gaming-challengers-2025-north-america-ace-stage-3-r5
-----------------------------------------
-Blue Otter vs Landor
-Event: Swiss Stage–Round 5							
-							Challengers 2025: North America ACE Stage 3
-Time: 4:30 AM
-Match Page: https://vlr.gg/525299/blue-otter-vs-landor-challengers-2025-north-america-ace-stage-3-r5
-----------------------------------------
-RIDDLE ORDER vs REJECT
-Event: Main Event–Upper Semifinals							
-							Challengers League 2025: Japan Finals
-Time: 12:30 PM
-Match Page: https://vlr.gg/524994/riddle-order-vs-reject-challengers-league-2025-japan-finals-ubsf
-----------------------------------------
-FENNEL vs NOEZ FOXX
-Event: Main Event–Upper Semifinals							
-							Challengers League 2025: Japan Finals
-Time: 3:30 PM
-Match Page: https://vlr.gg/524995/fennel-vs-noez-foxx-challengers-league-2025-japan-finals-ubsf
-----------------------------------------
-Team Secret Academy vs Motiv Esports
-Event: Group Stage–Week 3							
-							Challengers 2025: Southeast Asia Split 3
-Time: 4:30 PM
-Match Page: https://vlr.gg/521225/team-secret-academy-vs-motiv-esports-challengers-2025-southeast-asia-split-3-w3
-----------------------------------------
-RRQ Academy vs Z11
-Event: Group Stage–Week 3							
-							Challengers 2025: Southeast Asia Split 3
-Time: 7:30 PM
-Match Page: https://vlr.gg/521226/rrq-academy-vs-z11-challengers-2025-southeast-asia-split-3-w3
-----------------------------------------
-FUT Esports vs Team Heretics
-Event: Group Stage–Week 4							
-							VCT 2025: EMEA Stage 2
-Time: 8:30 PM
-Match Page: https://vlr.gg/511568/fut-esports-vs-team-heretics-vct-2025-emea-stage-2-w4
-----------------------------------------
-KOI vs Apeks
-Event: Group Stage–Week 4							
-							VCT 2025: EMEA Stage 2
-Time: 11:30 PM
-Match Page: https://vlr.gg/511569/koi-vs-apeks-vct-2025-emea-stage-2-w4
-----------------------------------------
-2Game Academy vs TBD
-Event: Playoffs–Upper Semifinals							
-							Challengers 2025: Brazil Gamers Club Split 2
-Time: 1:30 AM
-Match Page: https://vlr.gg/518747/2game-academy-vs-tbd-challengers-2025-brazil-gamers-club-split-2-ubsf
-----------------------------------------
-Winthrop University vs Maryville University
-Event: Swiss Stage–Round 5							
-							Challengers 2025: North America ACE Stage 3
-Time: 1:30 AM
-Match Page: https://vlr.gg/525300/winthrop-university-vs-maryville-university-challengers-2025-north-america-ace-stage-3-r5
-----------------------------------------
-SaD Esports vs Shopify Rebellion Gold
-Event: Swiss Stage–Round 5							
-							Challengers 2025: North America ACE Stage 3
-Time: 1:30 AM
-Match Page: https://vlr.gg/525301/sad-esports-vs-shopify-rebellion-gold-challengers-2025-north-america-ace-stage-3-r5
-----------------------------------------
-TBD vs TBD
-Event: Playoffs–Upper Final							
-							Challengers 2025: LATAM North ACE Stage 2
-Time: 3:30 AM
-Match Page: https://vlr.gg/525800/tbd-challengers-2025-latam-north-ace-stage-2-ubf
-----------------------------------------
-Stellae Gaming vs TBD
-Event: Playoffs–Upper Semifinals							
-							Challengers 2025: Brazil Gamers Club Split 2
-Time: 4:30 AM
-Match Page: https://vlr.gg/518748/stellae-gaming-vs-tbd-challengers-2025-brazil-gamers-club-split-2-ubsf
-----------------------------------------
-QoR vs ENVY
-Event: Swiss Stage–Round 5							
-							Challengers 2025: North America ACE Stage 3
-Time: 4:30 AM
-Match Page: https://vlr.gg/525302/qor-vs-envy-challengers-2025-north-america-ace-stage-3-r5
-----------------------------------------
-TBD vs TBD
-Event: Playoffs–Lower Round 1							
-							Challengers 2025: LATAM North ACE Stage 2
-Time: 6:30 AM
-Match Page: https://vlr.gg/525802/tbd-challengers-2025-latam-north-ace-stage-2-lr1
-----------------------------------------
-TBD vs TBD
-Event: Main Event–Lower Round 1							
-							Challengers League 2025: Japan Finals
-Time: 12:30 PM
-Match Page: https://vlr.gg/524998/tbd-challengers-league-2025-japan-finals-lr1
-----------------------------------------
-TBD vs TBD
-Event: Main Event–Upper Final							
-							Challengers League 2025: Japan Finals
-Time: 3:30 PM
-Match Page: https://vlr.gg/524996/tbd-challengers-league-2025-japan-finals-ubf
-----------------------------------------
-Fancy United Esports vs NAOS
-Event: Group Stage–Week 3							
-							Challengers 2025: Southeast Asia Split 3
-Time: 4:30 PM
-Match Page: https://vlr.gg/521227/fancy-united-esports-vs-naos-challengers-2025-southeast-asia-split-3-w3
-----------------------------------------
-Team NKT vs TALON Academy
-Event: Group Stage–Week 3							
-							Challengers 2025: Southeast Asia Split 3
-Time: 7:30 PM
-Match Page: https://vlr.gg/521228/team-nkt-vs-talon-academy-challengers-2025-southeast-asia-split-3-w3
-----------------------------------------
-Gentle Mates vs GIANTX
-Event: Group Stage–Week 4							
-							VCT 2025: EMEA Stage 2
-Time: 8:30 PM
-Match Page: https://vlr.gg/511570/gentle-mates-vs-giantx-vct-2025-emea-stage-2-w4
-----------------------------------------
-Natus Vincere vs Karmine Corp
-Event: Group Stage–Week 4							
-							VCT 2025: EMEA Stage 2
-Time: 11:30 PM
-Match Page: https://vlr.gg/511571/natus-vincere-vs-karmine-corp-vct-2025-emea-stage-2-w4
-----------------------------------------
-TBD vs TBD
-Event: Playoffs–Upper Final							
-							Challengers 2025: LATAM South ACE Stage 2
-Time: 12:30 AM
-Match Page: https://vlr.gg/525810/tbd-challengers-2025-latam-south-ace-stage-2-playoffs-ubf
-----------------------------------------
-TBD vs TBD
-Event: Playoffs–Lower Round 1							
-							Challengers 2025: Brazil Gamers Club Split 2
-Time: 1:30 AM
-Match Page: https://vlr.gg/518751/tbd-challengers-2025-brazil-gamers-club-split-2-lr1
-----------------------------------------
-TBD vs TBD
-Event: Playoffs–Lower Round 1							
-							Challengers 2025: LATAM South ACE Stage 2
-Time: 3:30 AM
-Match Page: https://vlr.gg/525812/tbd-challengers-2025-latam-south-ace-stage-2-playoffs-lr1
-----------------------------------------
-TBD vs TBD
-Event: Playoffs–Lower Round 1							
-							Challengers 2025: Brazil Gamers Club Split 2
-Time: 4:30 AM
-Match Page: https://vlr.gg/518752/tbd-challengers-2025-brazil-gamers-club-split-2-lr1
-----------------------------------------
-Gen.G vs Nongshim RedForce
-Event: Group Stage–Week 4							
-							VCT 2025: Pacific Stage 2
-Time: 1:30 PM
-Match Page: https://vlr.gg/508840/gen-g-vs-nongshim-redforce-vct-2025-pacific-stage-2-w4
-----------------------------------------
+																					2 vs Team Secret										
+
+
+																					1 | Event: Week 1							
+							Group Stage | URL: https://www.vlr.gg/508816/nongshim-redforce-vs-team-secret-vct-2025-pacific-stage-2-w1
+1:30 PM - T1										
+
+
+																					0 vs Paper Rex										
+
+
+																					2 | Event: Week 1							
+							Group Stage | URL: https://www.vlr.gg/508817/t1-vs-paper-rex-vct-2025-pacific-stage-2-w1
+4:05 PM - DRX										
+
+
+																					0 vs Gen.G										
+
+
+																					2 | Event: Week 1							
+							Group Stage | URL: https://www.vlr.gg/508818/drx-vs-gen-g-vct-2025-pacific-stage-2-w1
+1:30 PM - Rex Regum Qeon										
+
+
+																					0 vs Global Esports										
+
+
+																					2 | Event: Week 1							
+							Group Stage | URL: https://www.vlr.gg/508819/rex-regum-qeon-vs-global-esports-vct-2025-pacific-stage-2-w1
+3:45 PM - ZETA DIVISION										
+
+
+																					1 vs DetonatioN FocusMe										
+
+
+																					2 | Event: Week 1							
+							Group Stage | URL: https://www.vlr.gg/508820/zeta-division-vs-detonation-focusme-vct-2025-pacific-stage-2-w1
+1:30 PM - DRX										
+
+
+																					2 vs Nongshim RedForce										
+
+
+																					1 | Event: Week 1							
+							Group Stage | URL: https://www.vlr.gg/508821/drx-vs-nongshim-redforce-vct-2025-pacific-stage-2-w1
+4:40 PM - BOOM Esports										
+
+
+																					0 vs T1										
+
+
+																					2 | Event: Week 1							
+							Group Stage | URL: https://www.vlr.gg/508822/boom-esports-vs-t1-vct-2025-pacific-stage-2-w1
+1:30 PM - Global Esports										
+
+
+																					1 vs Team Secret										
+
+
+																					2 | Event: Week 1							
+							Group Stage | URL: https://www.vlr.gg/508823/global-esports-vs-team-secret-vct-2025-pacific-stage-2-w1
+4:50 PM - Paper Rex										
+
+
+																					2 vs DetonatioN FocusMe										
+
+
+																					0 | Event: Week 1							
+							Group Stage | URL: https://www.vlr.gg/508824/paper-rex-vs-detonation-focusme-vct-2025-pacific-stage-2-w1
+1:30 PM - TALON										
+
+
+																					2 vs ZETA DIVISION										
+
+
+																					0 | Event: Week 1							
+							Group Stage | URL: https://www.vlr.gg/508825/talon-vs-zeta-division-vct-2025-pacific-stage-2-w1
+3:30 PM - Rex Regum Qeon										
+
+
+																					2 vs Gen.G										
+
+
+																					1 | Event: Week 1							
+							Group Stage | URL: https://www.vlr.gg/508826/rex-regum-qeon-vs-gen-g-vct-2025-pacific-stage-2-w1
+1:30 PM - Gen.G										
+
+
+																					2 vs Global Esports										
+
+
+																					1 | Event: Week 2							
+							Group Stage | URL: https://www.vlr.gg/508828/gen-g-vs-global-esports-vct-2025-pacific-stage-2-w2
+4:20 PM - TALON										
+
+
+																					1 vs DetonatioN FocusMe										
+
+
+																					2 | Event: Week 2							
+							Group Stage | URL: https://www.vlr.gg/508829/talon-vs-detonation-focusme-vct-2025-pacific-stage-2-w2
+1:30 PM - T1										
+
+
+																					2 vs ZETA DIVISION										
+
+
+																					0 | Event: Week 2							
+							Group Stage | URL: https://www.vlr.gg/508830/t1-vs-zeta-division-vct-2025-pacific-stage-2-w2
+3:35 PM - Rex Regum Qeon										
+
+
+																					2 vs Nongshim RedForce										
+
+
+																					1 | Event: Week 2							
+							Group Stage | URL: https://www.vlr.gg/508831/rex-regum-qeon-vs-nongshim-redforce-vct-2025-pacific-stage-2-w2
+1:30 PM - DRX										
+
+
+																					2 vs Team Secret										
+
+
+																					0 | Event: Week 2							
+							Group Stage | URL: https://www.vlr.gg/508832/drx-vs-team-secret-vct-2025-pacific-stage-2-w2
+3:30 PM - BOOM Esports										
+
+
+																					0 vs Paper Rex										
+
+
+																					2 | Event: Week 2							
+							Group Stage | URL: https://www.vlr.gg/508833/boom-esports-vs-paper-rex-vct-2025-pacific-stage-2-w2
+1:30 PM - Gen.G										
+
+
+																					2 vs Team Secret										
+
+
+																					0 | Event: Week 3							
+							Group Stage | URL: https://www.vlr.gg/508834/gen-g-vs-team-secret-vct-2025-pacific-stage-2-w3
+3:30 PM - TALON										
+
+
+																					2 vs T1										
+
+
+																					0 | Event: Week 3							
+							Group Stage | URL: https://www.vlr.gg/508835/talon-vs-t1-vct-2025-pacific-stage-2-w3
+1:30 PM - BOOM Esports										
+
+
+																					0 vs DetonatioN FocusMe										
+
+
+																					2 | Event: Week 3							
+							Group Stage | URL: https://www.vlr.gg/508836/boom-esports-vs-detonation-focusme-vct-2025-pacific-stage-2-w3
+3:35 PM - Rex Regum Qeon										
+
+
+																					0 vs DRX										
+
+
+																					2 | Event: Week 3							
+							Group Stage | URL: https://www.vlr.gg/508837/rex-regum-qeon-vs-drx-vct-2025-pacific-stage-2-w3
+1:30 PM - Nongshim RedForce										
+
+
+																					2 vs Global Esports										
+
+
+																					0 | Event: Week 3							
+							Group Stage | URL: https://www.vlr.gg/508838/nongshim-redforce-vs-global-esports-vct-2025-pacific-stage-2-w3
+3:40 PM - Paper Rex										
+
+
+																					0 vs ZETA DIVISION										
+
+
+																					2 | Event: Week 3							
+							Group Stage | URL: https://www.vlr.gg/508839/paper-rex-vs-zeta-division-vct-2025-pacific-stage-2-w3
+1:30 PM - Gen.G										
+
+
+																					– vs Nongshim RedForce										
+
+
+																					– | Event: Week 4							
+							Group Stage | URL: https://www.vlr.gg/508840/gen-g-vs-nongshim-redforce-vct-2025-pacific-stage-2-w4
+4:30 PM - TALON										
+
+
+																					– vs Paper Rex										
+
+
+																					– | Event: Week 4							
+							Group Stage | URL: https://www.vlr.gg/508841/talon-vs-paper-rex-vct-2025-pacific-stage-2-w4
+1:30 PM - DRX										
+
+
+																					– vs Global Esports										
+
+
+																					– | Event: Week 4							
+							Group Stage | URL: https://www.vlr.gg/508842/drx-vs-global-esports-vct-2025-pacific-stage-2-w4
+4:30 PM - BOOM Esports										
+
+
+																					– vs ZETA DIVISION										
+
+
+																					– | Event: Week 4							
+							Group Stage | URL: https://www.vlr.gg/508843/boom-esports-vs-zeta-division-vct-2025-pacific-stage-2-w4
+1:30 PM - Rex Regum Qeon										
+
+
+																					– vs Team Secret										
+
+
+																					– | Event: Week 4							
+							Group Stage | URL: https://www.vlr.gg/508844/rex-regum-qeon-vs-team-secret-vct-2025-pacific-stage-2-w4
+4:30 PM - T1										
+
+
+																					– vs DetonatioN FocusMe										
+
+
+																					– | Event: Week 4							
+							Group Stage | URL: https://www.vlr.gg/508845/t1-vs-detonation-focusme-vct-2025-pacific-stage-2-w4
