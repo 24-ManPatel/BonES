@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/24-ManPatel/backendd/config"
-    "github.com/24-ManPatel/backendd/handlers"
+	"backendd/config"
+    "backendd/handlers"
 
 
 	"github.com/gorilla/mux"

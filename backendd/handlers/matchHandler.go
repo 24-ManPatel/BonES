@@ -7,8 +7,8 @@ import (
 	"os"
 	"time"
 
-	"valorant-backend/config"
-	"valorant-backend/models"
+	"backendd/config"
+	"backendd/models"
 
 	"go.mongodb.org/mongo-driver/bson"
 )
