@@ -24,17 +24,17 @@ func ConnectDB() {
 	mongoURI := os.Getenv("MONGO_URI")
 	dbName := os.Getenv("DB_NAME")
 
-	client, err := mongo.NewClient(options.Client().ApplyURI(mongoURI))
-	if err != nil {
-		log.Fatal(err)
+	if mongoURI == "" || dbName == "" {
+		log.Fatal("MONGO_URI and DB_NAME must be set in environment variables")
 	}
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	err = client.Connect(ctx)
+	// Updated connection method
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI(mongoURI))
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Failed to create MongoDB client:", err)
 	}
 
 	// Ping to check connection
@@ -43,6 +43,6 @@ func ConnectDB() {
 		log.Fatal("Could not connect to MongoDB:", err)
 	}
 
-	fmt.Println("✅ Connected to MongoDB Atlas")
+	fmt.Printf("✅ Connected to MongoDB Atlas - Database: %s\n", dbName)
 	DB = client.Database(dbName)
 }

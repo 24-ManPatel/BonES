@@ -7,7 +7,7 @@ import time as time_module
 
 # MongoDB Atlas setup
 MONGO_URI = "mongodb+srv://manpatel240406:uTyOSGo7lVNuvA8t@vlrdata.9ltay4g.mongodb.net/?retryWrites=true&w=majority&appName=VlrData"  # Replace with your MongoDB Atlas URI
-DB_NAME = "vlr_matches"
+DB_NAME = "vlrmatches"
 COLLECTION_NAME = "matches"
 
 client = MongoClient(MONGO_URI)
