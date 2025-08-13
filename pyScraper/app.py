@@ -4,6 +4,7 @@ from pymongo import MongoClient
 from datetime import datetime
 import schedule
 import time as time_module
+import re
 
 # MongoDB Atlas setup
 MONGO_URI = "mongodb+srv://manpatel240406:uTyOSGo7lVNuvA8t@vlrdata.9ltay4g.mongodb.net/?retryWrites=true&w=majority&appName=VlrData"  # Replace with your MongoDB Atlas URI
@@ -19,6 +20,9 @@ HEADERS = {
     'User-Agent': 'Mozilla/5.0'
 }
 
+def clean_text(text):
+    # Remove tabs/newlines and collapse multiple spaces
+    return re.sub(r'\s+', ' ', text).strip()
 
 def fetch_matches():
     response = requests.get(URL, headers=HEADERS)
@@ -29,25 +33,38 @@ def fetch_matches():
 
     for card in match_cards:
         try:
-            time_text = card.select_one(".match-item-time").text.strip()
+            time_text = clean_text(card.select_one(".match-item-time").text)
             teams = card.select(".match-item-vs-team")
-            scores = card.select(".match-item-vs-score span")
-            event = card.select_one(".match-item-event").text.strip()
+            event = clean_text(card.select_one(".match-item-event").text)
             match_url = 'https://www.vlr.gg' + card['href']
-
-            team1 = teams[0].text.strip()
-            team2 = teams[1].text.strip()
-
-            # Check if match is finished or upcoming
-            if scores and len(scores) == 2:
-                score1 = scores[0].text.strip()
-                score2 = scores[1].text.strip()
+    
+            team1_raw = clean_text(teams[0].text)
+            team2_raw = clean_text(teams[1].text)
+    
+            score_spans = card.select(".match-item-vs-score span")
+    
+            if score_spans and len(score_spans) == 2:
+                score1 = score_spans[0].text.strip()
+                score2 = score_spans[1].text.strip()
+                team1 = team1_raw
+                team2 = team2_raw
                 status = "finished"
             else:
-                score1 = score2 = None
-                status = "upcoming"
-
-            # Build document
+                score_match1 = re.search(r"\b(\d+)$", team1_raw)
+                score_match2 = re.search(r"\b(\d+)$", team2_raw)
+    
+                if score_match1 and score_match2:
+                    score1 = score_match1.group(1)
+                    score2 = score_match2.group(1)
+                    team1 = team1_raw[:score_match1.start()].strip()
+                    team2 = team2_raw[:score_match2.start()].strip()
+                    status = "finished"
+                else:
+                    score1 = score2 = None
+                    team1 = team1_raw
+                    team2 = team2_raw
+                    status = "upcoming"
+    
             match_doc = {
                 "start_time": time_text,
                 "team1": team1,
@@ -59,14 +76,13 @@ def fetch_matches():
                 "url": match_url,
                 "fetched_at": datetime.utcnow()
             }
-
-            # Upsert to avoid duplicates
+    
             collection.update_one(
                 {"url": match_doc["url"]},
                 {"$set": match_doc},
                 upsert=True
             )
-
+    
         except Exception as e:
             print("Error parsing match card:", e)
             continue
