@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
 import CursorEffects from "./ValorantCursorEffects";
+import { Link } from "react-router-dom";
+
 
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -91,10 +93,12 @@ const Home = () => {
           {texts[currentText].text}
         </motion.p>
         
-        <button className="mt-12 px-8 py-3 bg-[#FF4655] text-white font-cyber text-xl tracking-wider 
-         hover:bg-[#FF4655]/80 transition-colors duration-300 rounded font-bold">
-         Get Started
-        </button>
+        <Link to="/login">
+          <button className="mt-12 px-8 py-3 bg-[#FF4655] text-white font-cyber text-xl tracking-wider 
+            hover:bg-[#FF4655]/80 transition-colors duration-300 rounded font-bold">
+            Get Started
+          </button>
+        </Link>
       </div>
 
       <div className="absolute bottom-6 right-6 font-cyber text-xl font-bold text-[#FF4655] 
