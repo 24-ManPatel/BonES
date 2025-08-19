@@ -66,6 +66,9 @@ const ValorantLoginPage = () => {
     password: '',
     username: ''
   });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [apiMessage, setApiMessage] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -74,15 +77,160 @@ const ValorantLoginPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleInputChange = e => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  // Email validation
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
   };
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData);
+  // Password validation
+  const validatePassword = (password) => {
+    // At least 8 characters, 1 uppercase, 1 lowercase, 1 number, 1 special character
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
+  };
+
+  // Username validation
+  const validateUsername = (username) => {
+    // 3-20 characters, alphanumeric and underscore only
+    const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/;
+    return usernameRegex.test(username);
+  };
+
+  // Real-time validation
+  const validateField = (name, value) => {
+    let error = '';
+    
+    switch (name) {
+      case 'email':
+        if (!value) {
+          error = 'Email is required';
+        } else if (!validateEmail(value)) {
+          error = 'Please enter a valid email address';
+        }
+        break;
+      
+      case 'password':
+        if (!value) {
+          error = 'Password is required';
+        } else if (!validatePassword(value)) {
+          error = 'Password must be at least 8 characters with uppercase, lowercase, number and special character';
+        }
+        break;
+      
+      case 'username':
+        if (!isLogin && !value) {
+          error = 'Username is required';
+        } else if (!isLogin && !validateUsername(value)) {
+          error = 'Username must be 3-20 characters, alphanumeric and underscore only';
+        }
+        break;
+      
+      default:
+        break;
+    }
+    
+    return error;
+  };
+
+  const handleInputChange = e => {
+    const { name, value } = e.target;
+    
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+
+    // Clear API message when user starts typing
+    if (apiMessage) setApiMessage('');
+
+    // Real-time validation
+    const error = validateField(name, value);
+    setErrors(prev => ({
+      ...prev,
+      [name]: error
+    }));
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    
+    // Validate email
+    const emailError = validateField('email', formData.email);
+    if (emailError) newErrors.email = emailError;
+    
+    // Validate password
+    const passwordError = validateField('password', formData.password);
+    if (passwordError) newErrors.password = passwordError;
+    
+    // Validate username for registration
+    if (!isLogin) {
+      const usernameError = validateField('username', formData.username);
+      if (usernameError) newErrors.username = usernameError;
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async () => {
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setApiMessage('');
+
+    try {
+      const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
+      const requestBody = isLogin 
+        ? { email: formData.email, password: formData.password }
+        : { email: formData.email, password: formData.password, username: formData.username };
+
+      const response = await fetch(`http://localhost:8080${endpoint}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include', // Include cookies for session management
+        body: JSON.stringify(requestBody)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setApiMessage(`✅ ${isLogin ? 'Login successful!' : 'Registration successful!'}`);
+        
+        if (isLogin) {
+          // Store JWT token if provided
+          // if (data.token) {
+          //   localStorage.setItem('authToken', data.token);
+          // }
+          
+          // Redirect to dashboard or home page
+          // setTimeout(() => {
+          //   window.location.href = '/dashboard';
+          // }, 1500);
+
+          setTimeout(() => {
+            setApiMessage('Login successful! Welcome to the game!');
+          }, 1500);
+        } else {
+          // Switch to login after successful registration
+          setTimeout(() => {
+            setIsLogin(true);
+            setFormData({ email: formData.email, password: '', username: '' });
+            setApiMessage('Registration successful! Please login.');
+          }, 1500);
+        }
+      } else {
+        setApiMessage(`${data.message || 'An error occurred'}`);
+      }
+    } catch (error) {
+      console.error('API Error:', error);
+      setApiMessage('Network error. Please check if the backend server is running on localhost:8080');    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (loading) {
@@ -139,7 +287,11 @@ const ValorantLoginPage = () => {
             {/* Tab Switcher */}
             <div className="flex mb-8 bg-black rounded-none p-0 overflow-hidden valorant-tabs">
               <button
-                onClick={() => setIsLogin(true)}
+                onClick={() => {
+                  setIsLogin(true);
+                  setErrors({});
+                  setApiMessage('');
+                }}
                 className={`flex-1 py-4 text-sm font-bold tracking-wider transition-all duration-300 relative overflow-hidden ${
                   isLogin
                     ? 'bg-red-600 text-white'
@@ -152,7 +304,11 @@ const ValorantLoginPage = () => {
                 )}
               </button>
               <button
-                onClick={() => setIsLogin(false)}
+                onClick={() => {
+                  setIsLogin(false);
+                  setErrors({});
+                  setApiMessage('');
+                }}
                 className={`flex-1 py-4 text-sm font-bold tracking-wider transition-all duration-300 relative overflow-hidden ${
                   !isLogin
                     ? 'bg-red-600 text-white'
@@ -177,10 +333,17 @@ const ValorantLoginPage = () => {
                     name="username"
                     value={formData.username}
                     onChange={handleInputChange}
-                    className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 text-white text-lg placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all duration-300 font-mono tracking-wide"
+                    className={`w-full px-0 py-4 bg-transparent border-0 border-b-2 ${
+                      errors.username ? 'border-red-400' : 'border-gray-700'
+                    } text-white text-lg placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all duration-300 font-mono tracking-wide`}
                     placeholder="ENTER USERNAME"
-                    required={!isLogin}
+                    required
                   />
+                  {errors.username && (
+                    <p className="text-red-400 text-sm mt-2 font-mono tracking-wide">
+                      {errors.username}
+                    </p>
+                  )}
                 </div>
               )}
 
@@ -193,10 +356,17 @@ const ValorantLoginPage = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 text-white text-lg placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all duration-300 font-mono tracking-wide"
+                  className={`w-full px-0 py-4 bg-transparent border-0 border-b-2 ${
+                    errors.email ? 'border-red-400' : 'border-gray-700'
+                  } text-white text-lg placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all duration-300 font-mono tracking-wide`}
                   placeholder="ENTER EMAIL"
                   required
                 />
+                {errors.email && (
+                  <p className="text-red-400 text-sm mt-2 font-mono tracking-wide">
+                    {errors.email}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -208,19 +378,43 @@ const ValorantLoginPage = () => {
                   name="password"
                   value={formData.password}
                   onChange={handleInputChange}
-                  className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 text-white text-lg placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all duration-300 font-mono tracking-wide"
+                  className={`w-full px-0 py-4 bg-transparent border-0 border-b-2 ${
+                    errors.password ? 'border-red-400' : 'border-gray-700'
+                  } text-white text-lg placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all duration-300 font-mono tracking-wide`}
                   placeholder="ENTER PASSWORD"
                   required
                 />
+                {errors.password && (
+                  <p className="text-red-400 text-sm mt-2 font-mono tracking-wide">
+                    {errors.password}
+                  </p>
+                )}
               </div>
+
+              {/* API Response Message */}
+              {apiMessage && (
+                <div className={`text-center p-3 rounded ${
+                  apiMessage.includes('✅') ? 'bg-green-900 text-green-300' : 'bg-red-900 text-red-300'
+                } font-mono tracking-wide`}>
+                  {apiMessage}
+                </div>
+              )}
 
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="w-full bg-red-600 hover:bg-red-700 text-white font-black py-5 text-lg tracking-widest transition-all duration-300 transform hover:scale-105 focus:outline-none valorant-button group relative overflow-hidden"
+                disabled={isSubmitting}
+                className={`w-full ${
+                  isSubmitting 
+                    ? 'bg-gray-600 cursor-not-allowed' 
+                    : 'bg-red-600 hover:bg-red-700'
+                } text-white font-black py-5 text-lg tracking-widest transition-all duration-300 transform hover:scale-105 focus:outline-none valorant-button group relative overflow-hidden`}
               >
                 <span className="relative z-10">
-                  {isLogin ? 'ENTER GAME' : 'JOIN THE FIGHT'}
+                  {isSubmitting 
+                    ? (isLogin ? 'ENTERING...' : 'JOINING...') 
+                    : (isLogin ? 'ENTER GAME' : 'JOIN THE FIGHT')
+                  }
                 </span>
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               </button>
