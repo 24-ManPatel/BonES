@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 	"time"
 
 	"github.com/joho/godotenv"
@@ -16,9 +17,18 @@ var DB *mongo.Database
 
 func ConnectDB() {
 	// Load env file
-	err := godotenv.Load()
+	cwd, err := os.Getwd()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		fmt.Println("Error:", err)
+		return
+	}
+
+	parent_dir := filepath.Dir(cwd)
+	env_path := filepath.Join(parent_dir, ".env")
+
+	err = godotenv.Load(env_path)
+	if err != nil {
+		log.Fatal("Error loading .env file:", err)
 	}
 
 	mongoURI := os.Getenv("MONGO_URI")

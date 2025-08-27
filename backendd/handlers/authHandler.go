@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"net/http"
+
 	// "os"
 	"regexp"
 	"time"
@@ -12,8 +13,9 @@ import (
 	"backendd/models"
 	"backendd/utils"
 	"errors"
-    "go.mongodb.org/mongo-driver/bson/primitive"
+
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -37,7 +39,7 @@ func handleOptions(w http.ResponseWriter, r *http.Request) {
 // Register handles user registration
 func Register(w http.ResponseWriter, r *http.Request) {
 	enableCORS(w)
-	
+
 	if r.Method == "OPTIONS" {
 		handleOptions(w, r)
 		return
@@ -123,7 +125,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 // Login handles user authentication
 func Login(w http.ResponseWriter, r *http.Request) {
 	enableCORS(w)
-	
+
 	if r.Method == "OPTIONS" {
 		handleOptions(w, r)
 		return
@@ -217,18 +219,18 @@ func validateRegisterInput(req models.RegisterRequest) error {
 	// Password validation - Go doesn't support lookaheads, so we'll check each requirement separately
 	password := req.Password
 	if len(password) < 8 {
-	    return errors.New("password must be at least 8 characters")
+		return errors.New("password must be at least 8 characters")
 	}
-	
+
 	hasLower := regexp.MustCompile(`[a-z]`).MatchString(password)
 	hasUpper := regexp.MustCompile(`[A-Z]`).MatchString(password)
 	hasDigit := regexp.MustCompile(`[0-9]`).MatchString(password)
 	hasSpecial := regexp.MustCompile(`[@$!%*?&]`).MatchString(password)
-	
+
 	if !hasLower || !hasUpper || !hasDigit || !hasSpecial {
-	    return errors.New("password must contain uppercase, lowercase, number and special character")
+		return errors.New("password must contain uppercase, lowercase, number and special character")
 	}
-	
+
 	return nil
 }
 
