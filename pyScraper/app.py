@@ -25,7 +25,7 @@ client = MongoClient(MONGO_URI)
 db = client[DB_NAME]
 collection = db[COLLECTION_NAME]
 
-URL = "https://www.vlr.gg/event/matches/2500/vct-2025-pacific-stage-2/?series_id=4858"
+URL = "https://www.vlr.gg/event/matches/2596/game-changers-2025-championship-seoul/?series_id=all"
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 
 

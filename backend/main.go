@@ -49,6 +49,7 @@ func main() {
 	// V1 API routes (some might require authentication)
 	v1 := api.PathPrefix("/v1").Subrouter()
 	v1.HandleFunc("/matches", handlers.GetMatches).Methods("GET")
+	v1.HandleFunc("/leaderboard", handlers.GetLeaderboard).Methods("GET", "OPTIONS")
 
 	// Protected routes (require authentication)
 	protected := v1.PathPrefix("/protected").Subrouter()
@@ -56,9 +57,13 @@ func main() {
 		return middleware.AuthMiddleware(next.ServeHTTP)
 	})
 
-	// Add protected routes here
-	// protected.HandleFunc("/profile", handlers.GetProfile).Methods("GET")
-	// protected.HandleFunc("/predictions", handlers.CreatePrediction).Methods("POST")
+	// Prediction routes
+	protected.HandleFunc("/predictions", handlers.CreatePrediction).Methods("POST", "OPTIONS")
+	protected.HandleFunc("/predictions", handlers.GetUserPredictions).Methods("GET", "OPTIONS")
+	protected.HandleFunc("/score", handlers.GetUserScore).Methods("GET", "OPTIONS")
+
+	// Admin route to update prediction scores (can be called by cron job)
+	api.HandleFunc("/admin/update-scores", handlers.UpdatePredictionScores).Methods("POST", "OPTIONS")
 
 	// Health check endpoint
 	router.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {

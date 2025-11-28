@@ -1,6 +1,10 @@
 package models
 
-import "go.mongodb.org/mongo-driver/bson/primitive"
+import (
+	"time"
+
+	"go.mongodb.org/mongo-driver/bson/primitive"
+)
 
 type Match struct {
 	ID        primitive.ObjectID `bson:"_id,omitempty" json:"id"`
@@ -11,4 +15,6 @@ type Match struct {
 	Score1    string             `bson:"score1" json:"score1"`
 	Score2    string             `bson:"score2" json:"score2"`
 	Status    string             `bson:"status" json:"status"`
+	URL       string             `bson:"url,omitempty" json:"url,omitempty"`
+	FetchedAt time.Time          `bson:"fetched_at,omitempty" json:"fetched_at,omitempty"`
 }

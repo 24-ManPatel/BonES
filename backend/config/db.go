@@ -56,3 +56,8 @@ func ConnectDB() {
 	fmt.Printf("✅ Connected to MongoDB Atlas - Database: %s\n", dbName)
 	DB = client.Database(dbName)
 }
+
+// GetCollectionName returns the collection name from environment
+func GetCollectionName() string {
+	return os.Getenv("COLLECTION_NAME")
+}

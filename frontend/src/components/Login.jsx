@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Animated Text Component with random character effect
 const AnimatedText = ({ text, className, delay = 0 }) => {
@@ -59,6 +60,7 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
 };
 
 const ValorantLoginPage = () => {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
@@ -202,18 +204,17 @@ const ValorantLoginPage = () => {
         setApiMessage(`✅ ${isLogin ? 'Login successful!' : 'Registration successful!'}`);
         
         if (isLogin) {
-          // Store JWT token if provided
-          // if (data.token) {
-          //   localStorage.setItem('authToken', data.token);
-          // }
+          // Store JWT token and user info
+          if (data.token) {
+            localStorage.setItem('authToken', data.token);
+          }
+          if (data.user) {
+            localStorage.setItem('user', JSON.stringify(data.user));
+          }
           
-          // Redirect to dashboard or home page
-          // setTimeout(() => {
-          //   window.location.href = '/dashboard';
-          // }, 1500);
-
+          // Redirect to brackets page after successful login
           setTimeout(() => {
-            setApiMessage('Login successful! Welcome to the game!');
+            navigate('/brackets', { replace: true });
           }, 1500);
         } else {
           // Switch to login after successful registration
@@ -439,7 +440,7 @@ const ValorantLoginPage = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap');
 
         .valorant-title {
