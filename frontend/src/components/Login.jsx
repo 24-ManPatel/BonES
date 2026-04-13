@@ -189,7 +189,8 @@ const ValorantLoginPage = () => {
         ? { email: formData.email, password: formData.password }
         : { email: formData.email, password: formData.password, username: formData.username };
 
-      const response = await fetch(`http://localhost:8080${endpoint}`, {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+      const response = await fetch(`${API_URL}${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -229,7 +230,8 @@ const ValorantLoginPage = () => {
       }
     } catch (error) {
       console.error('API Error:', error);
-      setApiMessage('Network error. Please check if the backend server is running on localhost:8080');    } finally {
+      setApiMessage('Network error. Please check if the backend server is running.');
+    } finally {
       setIsSubmitting(false);
     }
   };

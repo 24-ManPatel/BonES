@@ -3,16 +3,14 @@ package handlers
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"net/http"
-
-	// "os"
 	"regexp"
 	"time"
 
 	"backendd/config"
 	"backendd/models"
 	"backendd/utils"
-	"errors"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -20,28 +18,14 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-// Enable CORS for all auth endpoints
-func enableCORS(w http.ResponseWriter) {
-	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:5173")
-	// w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
-
-	w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
-	w.Header().Set("Access-Control-Allow-Credentials", "true")
-}
-
-// Handle OPTIONS requests for CORS preflight
-func handleOptions(w http.ResponseWriter, r *http.Request) {
-	enableCORS(w)
-	w.WriteHeader(http.StatusOK)
-}
+func enableCORS(w http.ResponseWriter) { config.SetCORSHeaders(w) }
 
 // Register handles user registration
 func Register(w http.ResponseWriter, r *http.Request) {
 	enableCORS(w)
 
 	if r.Method == "OPTIONS" {
-		handleOptions(w, r)
+		w.WriteHeader(http.StatusOK)
 		return
 	}
 
@@ -127,7 +111,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	enableCORS(w)
 
 	if r.Method == "OPTIONS" {
-		handleOptions(w, r)
+		w.WriteHeader(http.StatusOK)
 		return
 	}
 

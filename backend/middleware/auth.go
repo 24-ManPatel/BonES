@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"strings"
 
+	"backendd/config"
 	"backendd/utils"
 )
 
@@ -15,12 +16,7 @@ const UserContextKey contextKey = "user"
 // AuthMiddleware validates JWT tokens and adds user info to context
 func AuthMiddleware(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		// Enable CORS
-		w.Header().Set("Access-Control-Allow-Origin", "http://localhost:5173")
-		// w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
-		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
-		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
-		w.Header().Set("Access-Control-Allow-Credentials", "true")
+		config.SetCORSHeaders(w)
 
 		// Handle preflight requests
 		if r.Method == "OPTIONS" {
